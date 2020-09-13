@@ -13,13 +13,13 @@ const tutorRoute = require('./routes/tutor.router');
 
 var app = express();
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(cors());
 app.use('/index',indexRoute);
 app.use('/student',studentRoute);
 app.use('/tutor',tutorRoute);
